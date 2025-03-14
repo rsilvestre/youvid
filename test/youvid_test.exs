@@ -14,7 +14,7 @@ defmodule YouvidTest do
       channel_title: "Test Channel",
       published_at: "2023-01-01",
       duration: "600",
-      view_count: 10000,
+      view_count: 10_000,
       like_count: 1000,
       comment_count: 100,
       thumbnail_url: "https://example.com/thumb.jpg",
@@ -27,8 +27,8 @@ defmodule YouvidTest do
     assert video_details.id == "test_id"
     assert video_details.title == "Test Video"
     assert video_details.description == "This is a test description"
-    assert video_details.view_count == 10000
-    assert video_details.like_count == 1000
+    assert video_details.view_count == 10_000
+    assert video_details.like_count == 1_000
     assert video_details.thumbnail_url == "https://example.com/thumb.jpg"
     assert video_details.tags == ["test", "video"]
     assert video_details.privacy_status == "public"
@@ -46,8 +46,8 @@ defmodule YouvidTest do
       "author" => "Test Channel",
       "publishDate" => "2023-01-01",
       "lengthSeconds" => "600",
-      "viewCount" => "10000",
-      "likes" => "1000",
+      "viewCount" => "10_000",
+      "likes" => "1_000",
       "commentCount" => "100",
       "thumbnail" => %{"thumbnails" => [%{"url" => "https://example.com/thumb.jpg"}]},
       "keywords" => ["test", "video"],
@@ -65,8 +65,8 @@ defmodule YouvidTest do
     assert video_details.channel_title == "Test Channel"
     assert video_details.published_at == "2023-01-01"
     assert video_details.duration == "600"
-    assert video_details.view_count == 10000
-    assert video_details.like_count == 1000
+    assert video_details.view_count == 10_000
+    assert video_details.like_count == 1_000
     assert video_details.comment_count == 100
     assert video_details.thumbnail_url == "https://example.com/thumb.jpg"
     assert video_details.tags == ["test", "video"]
@@ -122,15 +122,15 @@ defmodule YouvidTest do
     assert VideoDetails.format_view_count(video_details) == "500"
     
     # Test with thousands
-    video_details = %{base | view_count: 5500}
+    video_details = %{base | view_count: 5_500}
     assert VideoDetails.format_view_count(video_details) == "5.5K"
     
     # Test with millions
-    video_details = %{base | view_count: 1500000}
+    video_details = %{base | view_count: 1_500_000}
     assert VideoDetails.format_view_count(video_details) == "1.5M"
     
     # Test with billions
-    video_details = %{base | view_count: 1200000000}
+    video_details = %{base | view_count: 1_200_000_000}
     assert VideoDetails.format_view_count(video_details) == "1.2B"
   end
   
