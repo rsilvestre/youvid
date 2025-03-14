@@ -13,13 +13,12 @@ config :youvid,
   # Configure which backend to use for cache
   cache_backends: %{
     # Video details cache (using memory backend)
-    video_details: %{
-      backend: Youvid.Cache.MemoryBackend,
+    video_details: [
+      backend: YouCache.Backend.Memory,
       backend_options: [
-        table_name: :video_details_cache,
         max_size: 1000                       # Max entries in memory
       ]
-    }
+    ]
   }
 
 # For development, you can configure your API key here for convenience

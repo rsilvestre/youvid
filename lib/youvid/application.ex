@@ -11,7 +11,8 @@ defmodule Youvid.Application do
     cache_config = Application.get_env(:youvid, :cache, [])
 
     children = [
-      {Youvid.Cache, cache_config}
+      # Pass the app_name to allow YouCache to read configuration from :youvid app
+      {Youvid.Cache, [app_name: :youvid] ++ cache_config}
     ]
 
     opts = [strategy: :one_for_one, name: Youvid.Supervisor]

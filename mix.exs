@@ -47,6 +47,9 @@ defmodule Youvid.MixProject do
       {:nimble_options, "~> 1.0"},
       {:dialyxir, "~> 1.4", only: [:dev], runtime: false},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
+      
+      # YouCache dependency
+      {:youcache, path: "../youcache"},
 
       # Optional S3 dependencies
       {:ex_aws, "~> 2.5", optional: true},
