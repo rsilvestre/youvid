@@ -79,7 +79,7 @@ defmodule Youvid.MixProject do
     [
       files: ~w(lib .formatter.exs mix.exs README*),
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/patrykwozinski/youvid"}
+      links: %{"GitHub" => "https://github.com/rsilvestre/youvid"}
     ]
   end
 end

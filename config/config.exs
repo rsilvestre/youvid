@@ -25,7 +25,7 @@ config :youvid,
 # Make sure not to commit this file with your real API key
 if Mix.env() == :dev do
   # uncomment and replace with your YouTube API key for local development
-  config :youvid, youtube_api_key: "AIzaSyC363N6Ec655W0SvJ-fqZ0d16vcilDJkEE"
+  # config :youchan, youtube_api_key: "YOUR_YOUTUBE_API_KEY_HERE"
 end
 
 # For test environment, we use a dummy API key that will be mocked in tests
