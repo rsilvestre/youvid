@@ -49,7 +49,7 @@ defmodule Youvid.MixProject do
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       
       # YouCache dependency
-      {:youcache, path: "../youcache"},
+      {:youcache, github: "rsilvestre/youcache"},
 
       # Optional S3 dependencies
       {:ex_aws, "~> 2.5", optional: true},
